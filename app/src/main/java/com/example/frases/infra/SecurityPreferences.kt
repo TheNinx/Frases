@@ -9,7 +9,7 @@ class SecurityPreferences(val context: Context) {
         mSharedPreferences.edit().putString(indice,valor).apply()
     }
     fun getString(key: String): String{
-        return mSharedPreferences.getString(key,"") ?: ""
+        return mSharedPreferences.getString(MotivationConstants.KEY.PERSON_NAME,"") ?: ""
     }
 
 
