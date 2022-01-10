@@ -4,7 +4,7 @@ import com.example.frases.infra.MotivationConstants
 import kotlin.random.Random
 
 
-data class Phrase (val description: String,val category: Int)
+data class Phrase(val description: String, val category: Int)
 
 class Mock {
 
@@ -27,11 +27,13 @@ class Mock {
         Phrase("Se você acredita, faz toda a diferença.", MORNING),
         Phrase("Riscos devem ser corridos, porque o maior perigo é não arriscar nada!", MORNING)
     )
-    fun getPhrase(categoriaId: Int) : String {
 
-        val filtered = mListPhrases.filter{ (it.category == categoriaId) || categoriaId == ALL}
+    fun getPhrase(categoriaId: Int): String {
 
-        val rand = Random.nextInt(14)
+        val filtered = mListPhrases.filter { (it.category == categoriaId) || categoriaId == ALL }
+
+        val rand = Random.nextInt(filtered.size)
+
         return filtered[rand].description
     }
 
